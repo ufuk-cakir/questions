@@ -12,15 +12,13 @@ import questionsData from "@/data/questions.json";
 
 export default function Home() {
   // Initialize state with imported data
-  const [questions, setQuestions] = useState<string[]>(
-    questionsData.questions || [],
-  );
+  const [questions] = useState<string[]>(questionsData.questions || []);
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [remainingQuestions, setRemainingQuestions] = useState<string[]>(
     questionsData.questions || [],
   );
   const [liked, setLiked] = useLocalStorage<string[]>("likedQuestions", []);
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     nextQuestion();
