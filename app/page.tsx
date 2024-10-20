@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocalStorage } from "usehooks-ts";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 
 // Import the questions data directly
 import questionsData from "@/data/questions.json";
