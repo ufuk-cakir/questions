@@ -20,7 +20,7 @@ export default function Home() {
 
   const fetchQuestions = async () => {
     try {
-      const response = await fetch("/api/questions");
+      const response = await fetch("/questions.json");
       const data = await response.json();
       if (data.questions) {
         setQuestions(data.questions);
