@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import ReactGA from "react-ga";
-
+import { useEffect } from "react";
 const TRACKING_ID = "G-WVGS3GBFZ2";
 
 export default function RootLayout({
