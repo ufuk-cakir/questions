@@ -16,8 +16,12 @@ export default function RootLayout({
     ReactGA.initialize(TRACKING_ID);
 
     // Report page view on first load
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+    });
   }, []);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
