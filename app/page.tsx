@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocalStorage } from "usehooks-ts";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ReactGA from "react-ga"; // Import Google Analytics
+
 // import { useTheme } from "next-themes";
 
 // Import the questions data directly
@@ -35,6 +37,11 @@ export default function Home() {
     setRemainingQuestions(
       questionSet.filter((_, index) => index !== randomIndex),
     );
+    // Track the next question click event
+    ReactGA.event({
+      category: "User",
+      action: "Clicked Next Question",
+    });
   };
 
   const toggleLike = () => {
