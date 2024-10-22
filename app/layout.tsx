@@ -1,3 +1,5 @@
+"use client";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import ReactGA from "react-ga";
