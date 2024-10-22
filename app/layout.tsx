@@ -2,9 +2,7 @@
 
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import ReactGA from "react-ga";
 import { useEffect } from "react";
-const TRACKING_ID = "G-WVGS3GBFZ2";
 
 export default function RootLayout({
   children,
@@ -12,12 +10,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    // Initialize Google Analytics
-    ReactGA.initialize(TRACKING_ID);
+    // Add Google Analytics GA4 script dynamically
+    const script = document.createElement("script");
+    script.src = `https://www.googletagmanager.com/gtag/js?id=G-WVGS3GBFZ2`;
+    script.async = true;
+    document.head.appendChild(script);
 
-    // Report page view on first load
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    // Initialize GA4
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-WVGS3GBFZ2", {
+      page_path: window.location.pathname + window.location.search,
+    });
   }, []);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
