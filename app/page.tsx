@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocalStorage } from "usehooks-ts";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ReactGA from "react-ga"; // Import Google Analytics
+import ReactGA from "react-ga4"; // Import Google Analytics
 
 // import { useTheme } from "next-themes";
 
