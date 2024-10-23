@@ -95,10 +95,11 @@ export default function Home() {
   };
 
   // Swipe handlers
+  // Swipe handlers
   const handlers = useSwipeable({
     onSwipedLeft: () => nextQuestion(),
     onSwipedRight: () => previousQuestion(),
-    preventDefaultTouchmoveEvent: true,
+    preventScrollOnSwipe: true, // Corrected property name
     trackMouse: true,
   });
 
